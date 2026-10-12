@@ -323,6 +323,285 @@ footer a {
   padding: 0.45rem 0.65rem;
 }
 
+/* Andy's personnel file */
+.profile-page {
+  padding-top: 2rem;
+}
+
+.profile-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, 0.65fr);
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5rem);
+  min-height: min(82vh, 50rem);
+  padding: clamp(7rem, 12vw, 10rem) clamp(1.25rem, 5vw, 4rem) clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(115deg, rgba(7, 7, 7, 0.95), rgba(7, 7, 7, 0.48)),
+    repeating-linear-gradient(-8deg, transparent 0 1.15rem, rgba(0, 229, 255, 0.1) 1.15rem 1.35rem);
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+}
+
+.profile-intro {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-hero h1 {
+  max-width: 8ch;
+  font-size: clamp(4.5rem, 11vw, 9rem);
+}
+
+.profile-photo-frame {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 0.6rem;
+  padding: 0.5rem;
+  border: 1px solid var(--cyan);
+  background: rgba(7, 7, 7, 0.9);
+  box-shadow: 0.65rem 0.65rem 0 var(--hot);
+  transform: rotate(1.2deg);
+}
+
+.profile-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: contrast(1.04) saturate(0.92);
+}
+
+.profile-photo-frame figcaption {
+  padding: 0.65rem 0.25rem 0.15rem;
+  color: var(--cyan);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-building,
+.profile-writing,
+.profile-playing,
+.profile-etc {
+  margin-top: 1rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+}
+
+.profile-building {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 2rem clamp(2rem, 6vw, 5rem);
+  background:
+    linear-gradient(rgba(255, 106, 42, 0.14), rgba(255, 106, 42, 0.14)),
+    #100e0c;
+}
+
+.profile-page section h2 {
+  margin-bottom: 1rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(2.35rem, 5.5vw, 4.75rem);
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.profile-page section p,
+.profile-page section dd,
+.writing-list small {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.profile-page section strong {
+  color: var(--ink);
+}
+
+.profile-prose p:last-child,
+.band-card p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.profile-stats div {
+  padding: clamp(1rem, 3vw, 2rem);
+  background: #11110f;
+}
+
+.profile-stats dt {
+  color: var(--acid);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+}
+
+.profile-stats dd {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-links {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.profile-links a,
+.profile-text-link {
+  display: inline-block;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  background: rgba(7, 7, 7, 0.72);
+}
+
+.profile-writing {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 2rem clamp(2rem, 6vw, 5rem);
+  background:
+    linear-gradient(120deg, rgba(255, 59, 141, 0.13), transparent 65%),
+    #100c0e;
+}
+
+.profile-section-heading p:not(.section-label) {
+  max-width: 34rem;
+}
+
+.writing-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.writing-list a {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.writing-list strong,
+.writing-list small {
+  display: block;
+}
+
+.writing-list strong {
+  margin-bottom: 0.3rem;
+}
+
+.writing-list small {
+  font-size: 0.8rem;
+}
+
+.writing-list b,
+.writing-number {
+  color: var(--hot);
+}
+
+.writing-number {
+  align-self: start;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.profile-writing .profile-text-link {
+  grid-column: 2;
+  justify-self: start;
+  border-color: var(--hot);
+  color: var(--hot);
+}
+
+.profile-playing {
+  background:
+    linear-gradient(100deg, rgba(0, 229, 255, 0.11), transparent 60%),
+    #101413;
+}
+
+.band-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.band-card {
+  min-height: 13rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-top-color: var(--rust);
+  background: var(--panel);
+}
+
+.band-card:nth-child(2) {
+  transform: translateY(0.6rem) rotate(-0.45deg);
+}
+
+.band-card span {
+  color: var(--rust);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.band-card h3 {
+  margin: 2.5rem 0 0.5rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.profile-etc {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.6fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  background: #11110f;
+}
+
+.profile-etc dl {
+  margin: 0;
+}
+
+.profile-etc dl div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.35fr) 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-etc dl div:first-child {
+  padding-top: 0;
+}
+
+.profile-etc dl div:last-child {
+  border-bottom: 0;
+}
+
+.profile-etc dt {
+  color: var(--acid);
+}
+
+.profile-etc dd {
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   .shell {
     width: min(100% - 1rem, 1120px);
@@ -369,6 +648,63 @@ footer a {
   footer {
     display: grid;
     align-items: start;
+  }
+
+  .profile-page {
+    padding-top: 0.5rem;
+  }
+
+  .profile-hero,
+  .profile-building,
+  .profile-writing,
+  .profile-etc {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-hero {
+    min-height: 0;
+    gap: 2rem;
+    padding: 5.75rem 1.25rem 2rem;
+  }
+
+  .profile-hero h1 {
+    font-size: clamp(3.75rem, 20vw, 6rem);
+  }
+
+  .profile-photo-frame {
+    width: min(82%, 22rem);
+    margin: 0 auto 0.6rem;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-writing .profile-text-link {
+    grid-column: 1;
+  }
+
+  .writing-list a {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .writing-list b {
+    display: none;
+  }
+
+  .band-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .band-card,
+  .band-card:nth-child(2) {
+    min-height: 0;
+    transform: none;
+  }
+
+  .profile-etc dl div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 }
 
