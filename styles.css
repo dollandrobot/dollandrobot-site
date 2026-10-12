@@ -2,13 +2,13 @@
   color-scheme: dark;
   --bg: #070707;
   --ink: #f3f0df;
-  --muted: #b9b09d;
+  --muted: #cec6b4;
   --hot: #ff3b8d;
   --acid: #d6ff00;
   --cyan: #00e5ff;
   --rust: #ff6a2a;
-  --panel: rgba(243, 240, 223, 0.08);
-  --line: rgba(243, 240, 223, 0.22);
+  --panel: rgba(20, 20, 18, 0.94);
+  --line: rgba(243, 240, 223, 0.28);
 }
 
 * {
@@ -57,7 +57,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: 86vh;
+  min-height: min(86vh, 54rem);
   display: grid;
   align-content: center;
   padding: 5rem clamp(1rem, 5vw, 4rem);
@@ -171,7 +171,9 @@ footer a {
   gap: 1.5rem;
   padding: clamp(1.25rem, 4vw, 2.5rem);
   border: 1px solid var(--line);
-  background: rgba(255, 106, 42, 0.13);
+  background:
+    linear-gradient(rgba(255, 106, 42, 0.14), rgba(255, 106, 42, 0.14)),
+    #100e0c;
 }
 
 .manifesto h2,
@@ -196,25 +198,56 @@ footer a {
 }
 
 .product {
+  grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 1.2fr);
   margin-top: 2.5rem;
-  background: rgba(255, 59, 141, 0.12);
+  background:
+    linear-gradient(rgba(255, 59, 141, 0.13), rgba(255, 59, 141, 0.13)),
+    #100c0e;
+}
+
+.product-heading {
+  grid-column: 1 / -1;
 }
 
 .product h2 {
-  font-size: clamp(2rem, 4.2vw, 3.25rem);
-  overflow-wrap: anywhere;
+  max-width: 100%;
+  margin-bottom: 0;
+  font-size: clamp(2rem, 9vw, 6.5rem);
+  line-height: 0.82;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
-.product a {
+.product-copy {
+  align-self: end;
+}
+
+.product-copy a {
   display: inline-block;
   padding: 0.6rem 0.9rem;
   border: 1px solid var(--hot);
   color: var(--hot);
+  background: rgba(7, 7, 7, 0.72);
+}
+
+.product-preview {
+  display: block;
+  border: 1px solid rgba(255, 59, 141, 0.56);
+  background: #111318;
+  box-shadow: 0.55rem 0.55rem 0 rgba(0, 229, 255, 0.24);
+  overflow: hidden;
+}
+
+.product-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 1rem;
 }
 
@@ -226,15 +259,16 @@ article,
 
 article {
   min-height: 21rem;
-  padding: 1.25rem;
+  padding: 1.5rem;
+  border-top-color: var(--hot);
 }
 
 article:nth-child(2) {
-  transform: translateY(1.5rem) rotate(0.7deg);
+  transform: translateY(1rem) rotate(0.45deg);
 }
 
 article:nth-child(3) {
-  transform: rotate(-0.8deg);
+  transform: translateY(0.2rem) rotate(-0.45deg);
 }
 
 article span {
@@ -248,7 +282,7 @@ article span {
   padding: clamp(1.25rem, 4vw, 2.5rem);
   background:
     linear-gradient(90deg, rgba(0, 229, 255, 0.12), transparent),
-    var(--panel);
+    #101413;
 }
 
 .signal ul {
@@ -296,8 +330,8 @@ footer a {
   }
 
   .hero {
-    min-height: 92vh;
-    padding: 6rem 1rem 2rem;
+    min-height: 0;
+    padding: 5.5rem 1rem 3rem;
   }
 
   .hero::after {
@@ -310,6 +344,10 @@ footer a {
   .signal ul,
   footer {
     grid-template-columns: 1fr;
+  }
+
+  .product h2 {
+    font-size: clamp(2rem, 10vw, 4rem);
   }
 
   .grid {
@@ -337,6 +375,14 @@ footer a {
 @media (prefers-reduced-motion: no-preference) {
   .hero {
     animation: twitch 8s steps(1) infinite;
+  }
+
+  .product-preview img {
+    transition: transform 180ms ease-out;
+  }
+
+  .product-preview:hover img {
+    transform: scale(1.015);
   }
 
   @keyframes twitch {
